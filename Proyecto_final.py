@@ -355,7 +355,9 @@ def Menu_mostrar_catalogo():
     x = Validar_datos.validar_numero_rango(0, 7)
    
     # Condicional if.
-   
+    
+    x = int(x)
+    
     if x == 1:
         opcion_mostrar_catalogo = 'Peliculas'
     elif x == 2:
@@ -389,7 +391,7 @@ def Mostrar_catalogo(base_de_Datos, opcion_mostrar_catalogo):
        una condicional"""
        
     # Para mostrar las peliculas.
-    
+    print(opcion_mostrar_catalogo)
     if opcion_mostrar_catalogo == 'Peliculas':
         lista_peliculas = list((base_de_Datos['Peliculas'].keys()))
         for i in range(0, len(lista_peliculas)):
@@ -404,11 +406,11 @@ def Mostrar_catalogo(base_de_Datos, opcion_mostrar_catalogo):
     elif opcion_mostrar_catalogo == 'Series':
         lista_series = list((base_de_Datos['Series'].keys()))
         for i in range(0, len(lista_series)):
-            nombre_serie = lista_series[i]
+            nombre_serie = str(lista_series[i])
             año = str(base_de_Datos['Series'][nombre_serie]['año'])
             director = str(base_de_Datos['Series'][nombre_serie]['director'])
             temporadas = str(base_de_Datos['Series'][nombre_serie]['temporadas'])
-            precio = str(base_de_Datos['Series'][nombre_Pelicula]['precio'])
+            precio = str(base_de_Datos['Series'][nombre_serie]['precio'])
             print('\n' + nombre_serie + '    Año: ' + año + '  Director: ' + director + '  Temporadas: ' + temporadas + ',   Precio: ' + precio + '\n')
             
     # Para mostrar los documentales.
@@ -420,7 +422,7 @@ def Mostrar_catalogo(base_de_Datos, opcion_mostrar_catalogo):
             director = str(base_de_Datos['Documentales'][nombre_documental]['director'])
             tema = str(base_de_Datos['Documentales'][nombre_documental]['tema'])
             año = str(base_de_Datos['Documentales'][nombre_documental]['año'])
-            precio = str(base_de_Datos['Peliculas'][nombre_Pelicula]['precio'])
+            precio = str(base_de_Datos['Peliculas'][nombre_documental]['precio'])
             print('\n' + nombre_documental + '    Director@: ' + director + '  Tema: ' + tema + '  Año:  ' + año + ',   Precio: ' + precio + '\n')
     
     # Para mostrar los eventos en vivo.
@@ -433,7 +435,7 @@ def Mostrar_catalogo(base_de_Datos, opcion_mostrar_catalogo):
             fecha = str(base_de_Datos['Evento_deportivo_en_vivo'][nombre_evento_deportivo]['fecha'])
             hora = str(base_de_Datos['Evento_deportivo_en_vivo'][nombre_evento_deportivo]['hora'])
             lugar = str(base_de_Datos['Evento_deportivo_en_vivo'][nombre_evento_deportivo]['lugar'])
-            precio = str(base_de_Datos['Peliculas'][nombre_Pelicula]['precio'])
+            precio = str(base_de_Datos['Peliculas'][nombre_evento_deportivo]['precio'])
             print('\n' + nombre_Pelicula + '   Deporte: ' + deporte + '   Fecha: ' + fecha + '   Hora: ' + hora + '   Lugar: ' + lugar + ',   Precio: ' + precio + '\n')
     
     # Para mostrar todo el catálogo.
@@ -453,7 +455,7 @@ def Mostrar_catalogo(base_de_Datos, opcion_mostrar_catalogo):
             año = str(base_de_Datos['Series'][nombre_serie]['año'])
             director = str(base_de_Datos['Series'][nombre_serie]['director'])
             temporadas = str(base_de_Datos['Series'][nombre_serie]['temporadas'])
-            precio = str(base_de_Datos['Peliculas'][nombre_Pelicula]['precio'])
+            precio = str(base_de_Datos['Peliculas'][nombre_serie]['precio'])
             print('\n' + nombre_serie + '    Año: ' + año + '  Director: ' + director + '  Temporadas: ' + temporadas + ',   Precio: ' + precio + '\n')
         
         lista_documentales = list((base_de_Datos['Documentales'].keys()))
@@ -462,7 +464,7 @@ def Mostrar_catalogo(base_de_Datos, opcion_mostrar_catalogo):
             director = str(base_de_Datos['Documentales'][nombre_documental]['director'])
             tema = str(base_de_Datos['Documentales'][nombre_documental]['tema'])
             año = str(base_de_Datos['Documentales'][nombre_documental]['año'])
-            precio = str(base_de_Datos['Peliculas'][nombre_Pelicula]['precio'])
+            precio = str(base_de_Datos['Peliculas'][nombre_documental]['precio'])
             print('\n' + nombre_documental + '    Director@: ' + director + '  Tema: ' + tema + '  Año:  ' + año + ',   Precio: ' + precio + '\n')
         
         lista_evento_deportivo = list((base_de_Datos['Evento_deportivo_en_vivo'].keys()))
@@ -472,7 +474,7 @@ def Mostrar_catalogo(base_de_Datos, opcion_mostrar_catalogo):
             fecha = str(base_de_Datos['Evento_deportivo_en_vivo'][nombre_evento_deportivo]['fecha'])
             hora = str(base_de_Datos['Evento_deportivo_en_vivo'][nombre_evento_deportivo]['hora'])
             lugar = str(base_de_Datos['Evento_deportivo_en_vivo'][nombre_evento_deportivo]['lugar'])
-            precio = str(base_de_Datos['Peliculas'][nombre_Pelicula]['precio'])
+            precio = str(base_de_Datos['Peliculas'][nombre_evento_deportivo]['precio'])
             print('\n' + nombre_Pelicula + '   Deporte: ' + deporte + '   Fecha: ' + fecha + '   Hora: ' + hora + '   Lugar: ' + lugar + ',   Precio: ' + precio + '\n')
         
     else:
@@ -543,7 +545,9 @@ def ejecucion_programa (base_de_Datos):
                 y Menu_mostrar_catalogo()."""
                 
          elif Opcion_Menu == 4:
-             Mostrar_catalogo(base_de_Datos, Menu_mostrar_catalogo())
+             
+             opcion_mostrar_catalogo = Menu_mostrar_catalogo()
+             Mostrar_catalogo(base_de_Datos, opcion_mostrar_catalogo)
              
              """Si el valor de la variable Opcion_menu es igual a 5
                 se cargará el  catálogo. utilizando la función cargar base de datos().

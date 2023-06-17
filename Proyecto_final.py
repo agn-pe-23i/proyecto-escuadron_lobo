@@ -170,7 +170,7 @@ def ingresa_datos(Opcion_a_ingresar, base_de_Datos):
         fecha = input('Fecha: ')
         hora = input('Hora: ')
         lugar = input('Lugar: ')
-        precio = input('venta: ')
+        precio = input('Venta: ')
         y = {'deporte':deporte, 'fecha':fecha, 'hora':hora, 'lugar':lugar, 'precio':precio}
         base_de_Datos[Opcion_a_ingresar][titulo] = y
     
@@ -365,7 +365,7 @@ def Menu_mostrar_catalogo():
     elif x == 3:
         opcion_mostrar_catalogo = 'Documentales'
     elif x == 4:
-        opcion_mostrar_catalogo = 'Eventos_deportivo_en_vivo'
+        opcion_mostrar_catalogo = 'Evento_deportivo_en_vivo'
     elif x == 5:
         opcion_mostrar_catalogo = 'Todo'
     else:
@@ -391,7 +391,7 @@ def Mostrar_catalogo(base_de_Datos, opcion_mostrar_catalogo):
        una condicional"""
        
     # Para mostrar las peliculas.
-    print(opcion_mostrar_catalogo)
+    
     if opcion_mostrar_catalogo == 'Peliculas':
         lista_peliculas = list((base_de_Datos['Peliculas'].keys()))
         for i in range(0, len(lista_peliculas)):
@@ -422,7 +422,7 @@ def Mostrar_catalogo(base_de_Datos, opcion_mostrar_catalogo):
             director = str(base_de_Datos['Documentales'][nombre_documental]['director'])
             tema = str(base_de_Datos['Documentales'][nombre_documental]['tema'])
             año = str(base_de_Datos['Documentales'][nombre_documental]['año'])
-            precio = str(base_de_Datos['Peliculas'][nombre_documental]['precio'])
+            precio = str(base_de_Datos['Documentales'][nombre_documental]['precio'])
             print('\n' + nombre_documental + '    Director@: ' + director + '  Tema: ' + tema + '  Año:  ' + año + ',   Precio: ' + precio + '\n')
     
     # Para mostrar los eventos en vivo.
@@ -435,8 +435,8 @@ def Mostrar_catalogo(base_de_Datos, opcion_mostrar_catalogo):
             fecha = str(base_de_Datos['Evento_deportivo_en_vivo'][nombre_evento_deportivo]['fecha'])
             hora = str(base_de_Datos['Evento_deportivo_en_vivo'][nombre_evento_deportivo]['hora'])
             lugar = str(base_de_Datos['Evento_deportivo_en_vivo'][nombre_evento_deportivo]['lugar'])
-            precio = str(base_de_Datos['Peliculas'][nombre_evento_deportivo]['precio'])
-            print('\n' + nombre_Pelicula + '   Deporte: ' + deporte + '   Fecha: ' + fecha + '   Hora: ' + hora + '   Lugar: ' + lugar + ',   Precio: ' + precio + '\n')
+            precio = str(base_de_Datos['Evento_deportivo_en_vivo'][nombre_evento_deportivo]['precio'])
+            print('\n' + nombre_evento_deportivo + '   Deporte: ' + deporte + '   Fecha: ' + fecha + '   Hora: ' + hora + '   Lugar: ' + lugar + ',   Precio: ' + precio + '\n')
     
     # Para mostrar todo el catálogo.
     
@@ -474,7 +474,7 @@ def Mostrar_catalogo(base_de_Datos, opcion_mostrar_catalogo):
             fecha = str(base_de_Datos['Evento_deportivo_en_vivo'][nombre_evento_deportivo]['fecha'])
             hora = str(base_de_Datos['Evento_deportivo_en_vivo'][nombre_evento_deportivo]['hora'])
             lugar = str(base_de_Datos['Evento_deportivo_en_vivo'][nombre_evento_deportivo]['lugar'])
-            precio = str(base_de_Datos['Peliculas'][nombre_evento_deportivo]['precio'])
+            precio = str(base_de_Datos['Evento_deportivo_en_vivo':][nombre_evento_deportivo]['precio'])
             print('\n' + nombre_Pelicula + '   Deporte: ' + deporte + '   Fecha: ' + fecha + '   Hora: ' + hora + '   Lugar: ' + lugar + ',   Precio: ' + precio + '\n')
         
     else:

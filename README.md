@@ -102,13 +102,18 @@ Esta función inicia nuestro programa con una base de datos sin productos. Esta 
 
 **Comentarios respecto al diseño y a la implementación del proyecto:**
 
-Antes de empezar a programa, realizamos el esquema estructural utilizando el método top-down. Visualizamos la importancia de un módulo el cual validara la información ingresada por el usuario. Dicho modulo seria utilizando por la función que ingresara datos
+Antes de empezar a programa, realizamos el esquema estructural utilizando el método top-down. Visualizamos la importancia de un módulo el cual validara la información ingresada por el usuario. Dicho modulo seria utilizando por la función que ingresara datos los datos.
 
 Estructuramos los módulos para satisfacer problemas pequeños que a su vez resolvieran el problema principal. 
 
-Decidimos que también usaríamos el módulo para validar datos para validar las opciones entre el menú y sub-menú.
+Decidimos que también usaríamos el módulo para validar datos al momento de validar las opciones entre el menú y los sub-menú.
 
-Tuvimos un error al momento de implementar el esquema estructural el cual fue en no pensar en un módulo que mantuviera en bucle todo el programa.  Dicho error ya está corregido el esquema estructural mostrado en este archivo.
+Tuvimos un error al momento de implementar el esquema estructural el cual fue en no pensar en un módulo que mantuviera en bucle todo el programa. Lo que causaba dicho erro era que el programa se "cerraba" antes de tiempo. Dicho error ya está corregido el esquema estructural mostrado en este archivo.
 
 Definimos nuestra base de datos como un solo diccionario. Llegamos a la conclusión que podríamos aprovechar de mejor manera las características de los diccionarios dentro de Python. Podríamos así buscar, eliminar o agregar productos utilizando las claves de los diccionarios.
+Por conclusión nuestro diccionario era un diccionario de diccionarios.
+El diccionario vació arrancaría con el programa para un mejor funcionamiento de este.
+
 Teníamos juntas cada tres días para apoyarnos como equipo y así implementar de mejor manera las funciones repartidas por integrante.
+
+Con el diagrama bien estructurado, implementar las funciones resulto más sencillo. Lo último fue depurar los códigos hasta optimizar cada función y así obtener un programa que satisface el problema de manera clara y estructurada.

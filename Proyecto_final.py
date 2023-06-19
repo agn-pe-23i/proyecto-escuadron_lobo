@@ -4,7 +4,7 @@ Autores: Abad Ramírez Gamaliel
          Cadena Garcilazo Angel Josue
          Arreola Garcia José Eduardo
 
-Este programa fue diseñado para que una compañía de streming pueda manipular el
+Este programa fue diseñado para que una compañía de streaming pueda manipular el
 catalogo. 
 Se tomaron en cuenta las siguientes necesidades para implementar al programa: 
     Agregar un producto.
@@ -19,8 +19,13 @@ Toda nuestro catalogo será manejada por un diccionario de diccionarios.
 Dicho catalogo será asignado en la variable base_de_Datos.
 """
 
-"""Importamos tres módulos necesarios para el correcto funcionamiento del 
+"""Importamos cuatro módulos necesarios para el correcto funcionamiento del 
    programa"""
+
+"""Importamos el módulo sys. Utilizaremos el módulo sys 
+   para cerrar el programa utilizando la función  .exit()"""
+
+import sys
 
 """El módulo Validar_datos.py contiene funciones que validan múltiples tipos de datos.
    El módulo fue diseñado prioritariamente para el programa proyecto_Final.py."""
@@ -66,7 +71,7 @@ def tipo_de_producto_a_ingresar(base_de_Datos):
        Dependerá de la necesidad del usuario el producto que deseé agregar.
        Esta función utiliza como argumento la variable base_de_Datos
        para ejecutar la opción número 5 del menú.
-       la Función retorna la Opcion_entrada"""
+       la Función retorna la variable Opcion_entrada"""
     
     print("Menú agregar producto \n\n" 
           "1. Película \n" 
@@ -81,12 +86,14 @@ def tipo_de_producto_a_ingresar(base_de_Datos):
     x = Validar_datos.validar_numero_rango(0, 6)
     
     """Opcion_a_ingresar el nombre de la categoría del producto. 
-       Dichos nombres ya están definidas en la base de datos como claves.
+       Dichos nombres ya están definidos en la base de datos como claves.
        Recordemos que la variable base_de_Datos es un diccionario de diccionarios.
        Utilizaremos la variable Opcion_a_ingresar como clave para entrar al diccionario."""
     
-    # Por medio de condicionales if, elif y else asignamos a la variable
-   
+    # Por medio de condicionales if, elif y else asignamos a la variable.
+    
+    
+
     if x == 1:
         Opcion_a_ingresar = 'Peliculas'
     elif x == 2:
@@ -97,6 +104,7 @@ def tipo_de_producto_a_ingresar(base_de_Datos):
         Opcion_a_ingresar = 'Evento_deportivo_en_vivo'
     else:
         ejecucion_programa(base_de_Datos)
+        
         
     return Opcion_a_ingresar
 
@@ -129,7 +137,7 @@ def ingresa_datos(Opcion_a_ingresar, base_de_Datos):
         titulo = input('Nombre de la pelicula: ')
         titulo = titulo.strip()
         año = Validar_datos.validar_año()
-        director = input('Director@: ')
+        director = Validar_datos.validar_director()
         precio = Validar_datos.validar_venta_renta()
         y = {'año':año, 'director':director, 'precio':precio}
         base_de_Datos[Opcion_a_ingresar][titulo] = y
@@ -141,7 +149,7 @@ def ingresa_datos(Opcion_a_ingresar, base_de_Datos):
         titulo = titulo.strip()
         base_de_Datos[Opcion_a_ingresar][titulo] = {}
         año = Validar_datos.validar_año()
-        director = input('Director@: ')
+        director = Validar_datos.validar_director()
         temporadas = input('Temporadas: ')
         precio = Validar_datos.validar_venta_renta()
         y = {'año':año, 'director':director, 'temporadas':temporadas, 'precio':precio}
@@ -153,7 +161,7 @@ def ingresa_datos(Opcion_a_ingresar, base_de_Datos):
         titulo = input('Nombre del documental: ')
         titulo = titulo.strip()
         base_de_Datos[Opcion_a_ingresar][titulo] = {}
-        director = input('Director@: ')
+        director = Validar_datos.validar_director()
         tema = input('Tema: ')
         año = Validar_datos.validar_año()
         precio = Validar_datos.validar_venta_renta()
@@ -162,7 +170,7 @@ def ingresa_datos(Opcion_a_ingresar, base_de_Datos):
         
     # Ingresa eventos deportivos en vivo.
     
-    else:
+    elif Opcion_a_ingresar == 'Evento_deportivo_en_vivo':
         titulo = input('Nombre del evento en vivo: ')
         titulo = titulo.strip()
         base_de_Datos[Opcion_a_ingresar][titulo] = {}
@@ -173,6 +181,7 @@ def ingresa_datos(Opcion_a_ingresar, base_de_Datos):
         precio = input('Venta: ')
         y = {'deporte':deporte, 'fecha':fecha, 'hora':hora, 'lugar':lugar, 'precio':precio}
         base_de_Datos[Opcion_a_ingresar][titulo] = y
+
     
     return base_de_Datos
 
@@ -509,14 +518,15 @@ def ejecucion_programa (base_de_Datos):
        que está contenido en la variable base_de_Datos pueda posteriormente seguir siendo manipulada."""
     
     """A la variable Ejecutar se le asigna el valor de True y utilizando 
-       la condicional while el programa se ejecutará hasta que dicha variable
-       cambie de valor a False"""
+       la condicional while el programa se ejecutará indefinidamente hasta que 
+       el usuario ingrese la opción numero 7 (Salir). """
        
     Ejecutar = True
     
     while Ejecutar == True:
-         
         
+         
+         
          Opcion_Menu = seleccion_menu()
         
          """Si el valor de la variable Opcion_menu es igual a 1 
@@ -524,8 +534,10 @@ def ejecucion_programa (base_de_Datos):
             e ingresa_datos()"""        
         
          if Opcion_Menu == 1:
-             opcion_a_ingresar = tipo_de_producto_a_ingresar(base_de_Datos)
-             ingresa_datos(opcion_a_ingresar, base_de_Datos)
+             Opcion_a_ingresar = ''
+             7
+             Opcion_a_ingresar = tipo_de_producto_a_ingresar(base_de_Datos)
+             ingresa_datos(Opcion_a_ingresar, base_de_Datos)
             
              """Si el valor de la variable Opcion_menu es igual a 2
                 se buscará un producto en el catálogo utilizando la función buscar_producto()."""
@@ -569,7 +581,10 @@ def ejecucion_programa (base_de_Datos):
          
          elif Opcion_Menu == 7:
              print('\nExit')
-             Ejecutar = False
+             """Utilizamos la función .exit() del 
+                modulo sys para cerrar el programa."""
+            
+             sys.exit()
              
 def main ():
    

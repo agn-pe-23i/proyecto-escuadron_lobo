@@ -1,7 +1,7 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/LCXMIOgt)
-**Proyecto Final: Servicio de Streaming**
+**Proyecto**
 
-Diagrama de estructura:
+**Diagrama de estructura:**
 
 [![Dise-o-sin-t-tulo.jpg](https://i.postimg.cc/CLfXG0H5/Dise-o-sin-t-tulo.jpg)](https://postimg.cc/TpftxZsv)
 
@@ -64,3 +64,7 @@ Solicita al usuario el nombre exacto del producto que desea eliminar.
 Busca el producto en todas las categorías del catálogo y lo elimina si se encuentra.
 Si el producto no se encuentra, muestra un mensaje indicando que el producto no fue encontrado.
 Estas son algunas de las funciones del programa. El código también incluye la importación de módulos necesarios, como sys y json, así como el módulo personalizado Validar_datos, que contiene funciones para validar diferentes tipos de datos. Además, hay una breve descripción del programa y se define una variable base_de_Datos como un diccionario de diccionarios para almacenar el catálogo de productos.
+
+**Comentarios respecto al diseño y a la implementación del proyecto:**
+
+

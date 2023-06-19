@@ -155,6 +155,22 @@ def validar_s_n():
     
     return Eliminacion_Validada
 
+def validar_director():
+    
+    """ Esta función valida que la información ingresada sean letras y no números.
+    Se puede utilizar para validar nombres personales y apellidos. 
+    Retorna la entrada validada."""
+    
+    Validar = False
+    while Validar == False:
+        director = input('Director@: ')
+        if director.isalpha():
+            Validar = True
+        else:
+            print('Ingresa un nombre válido: ')
+    
+    return director
+
 
 
     

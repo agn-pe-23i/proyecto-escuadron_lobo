@@ -1,11 +1,11 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/LCXMIOgt)
 **Proyecto**
 
-**Diagrama de estructura: **
+**Diagrama de estructura:**
 
-[![Dise-o-sin-t-tulo.jpg](https://i.postimg.cc/CLfXG0H5/Dise-o-sin-t-tulo.jpg)](https://postimg.cc/TpftxZsv)
+[![Agregar-producto-1.jpg](https://i.postimg.cc/x1cmMy4Y/Agregar-producto-1.jpg)](https://postimg.cc/0z1rqmvH)
 
-**Documentación del módulo Validar_datos.py:**
+**Documentación del módulo Validar_datos.py**
 
 El módulo "Valdar_datos.py" proporciona una serie de funciones para validar diferentes tipos de datos. Se diseñó prioritariamente para el programa Proyecto_final.py.
 
@@ -100,7 +100,7 @@ Esta función ejecuta en bucle todo el funcionamiento del programa, se implement
 Función main():
 Esta función inicia nuestro programa con una base de datos sin productos. Esta base de datos la guarda en la variable base_de_Datos para ser utilizada por la funcion ejecucion_programa(base_de_Datos) y dicha infomación ser modificada por el funcionamiento de la función ejecucion_programa(base_de_Datos).
 
-**Comentarios respecto al diseño y a la implementación del proyecto: **
+**Comentarios respecto al diseño y a la implementación del proyecto:**
 
 Antes de empezar a programa, realizamos el esquema estructural utilizando el método top-down. Visualizamos la importancia de un módulo el cual validara la información ingresada por el usuario. Dicho modulo seria utilizando por la función que ingresara datos
 

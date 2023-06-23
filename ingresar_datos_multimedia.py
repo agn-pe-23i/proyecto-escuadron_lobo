@@ -4,17 +4,16 @@ Módulo: ingresar_datos_multimedia.py
 
 Este módulo incluye funciones para ingresar y validar datos descriptivos de 
 productos multimedia.
-Estas funciones se pueden utilizar para ingresar de manera más sencilla 
-características de productos para algún servicio
-de streaming por ejemplo Netflix, HBO Max, Blim, etc.
+Estas funciones se pueden utilizar para ingresar y validar de manera más sencilla 
+características de productos para algún servicio de streaming 
+por ejemplo Netflix, HBO Max, Blim, etc.
 '''
 
 
 def ingresar_numero(tipo):
     
     """Esta función valida que la entrada sea una cadena de números.
-    La variable tipo es para que el programador de detalle del dato descriptivo
-    a ingresar y validar.
+    La variable tipo es para detallar el tipo de dato descriptivo a ingresar y validar.
     x es igual a el número a validar.
     Retorna la entrada validada."""
     
@@ -28,6 +27,7 @@ def ingresar_numero(tipo):
             Validar = True
         else:
             print('Ingresa un número válido.')
+    
     return x
 
 def ingresa_año():
@@ -49,6 +49,7 @@ def ingresa_año():
             print('Ingresa un número de 4 dígitos. ')
     
     x = int(x)
+    
     return x
 
 def ingresa_precio():
@@ -77,11 +78,11 @@ def ingresa_venta_renta():
     
    """Esta función asigna y valida el valor del precio de acuerdo con lo que el usuario 
    necesite (venta, renta o ambos). Utilizando una estructura de control while se valida que 
-   la opcion del sub_menú ingresada sea un numero mayor a o y menor a 4.
-   De acuerdo con el menú impreso, el usuario decidirá que opción tomar.
-   Rentorna el precio validado."""
-    
-   Validar = False
+   la opción del submenú ingresada sea un número mayor a o y menor a 4.
+   De acuerdo con el menú impreso, el usuario decidirá que opción tomar
+   Este módulo es importante incluirlo porque para cualquier servicio de streaming 
+   el vender los productos es el objetivo principal de dichas plataformas.
+   Retorna el precio validado."""
     
    print(' \n Precio: \n\n'
           '1. Venta \n'
@@ -89,6 +90,7 @@ def ingresa_venta_renta():
           '3. Ambos \n')
    
    Validar = False
+   
    while Validar == False:
        x = input('Ingresa el número de tu preferencia: ')
        if x.isdigit() and int(x) > 0 and int(x) < 4:
@@ -98,7 +100,8 @@ def ingresa_venta_renta():
   
    x = int(x)
    
-    
+   Validar = False 
+   
    if x == 1:
         precio = ingresa_precio()
         precio_definitivo = ' Venta: ' + str(precio) + '$'
@@ -106,21 +109,22 @@ def ingresa_venta_renta():
         precio = ingresa_precio()
         precio_definitivo = ' Renta: ' + str(precio) + '$'
    else:
-        while Validar == False:
-            Precio_venta = input('Ingresa el precio de venta: ')
-            if Precio_venta.isdigit():
-                Validar = True 
-            else: 
-                print('Ingresa un precio valido: ')
+       while Validar == False:
+           precio_venta = input('Ingresa el precio de venta: ')
+           if precio_venta.isdigit():
+              Validar = True 
+           else: 
+               print('Ingresa un precio valido: ')
         
-        while Validar == True:
-            Precio_renta = input('Ingresa el precio de renta: ')
-            if Precio_renta.isdigit():
-                Validar = False
-            else: 
-                print('Ingresa un precio valido ')
+       while Validar == True:
+           precio_renta = input('Ingresa el precio de renta: ')
+           if precio_renta.isdigit():
+             Validar = False
+           else: 
+               print('Ingresa un precio valido ')
+           
         
-        precio_definitivo = ' Venta: ' + str(Precio_venta) + '$' + ' Renta: ' + (Precio_renta) + '$'
+   precio_definitivo = ' Venta: ' + str(precio_venta) + '$' + ', Renta: ' + str(precio_renta) + '$'
             
    return precio_definitivo   
 

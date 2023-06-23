@@ -126,8 +126,8 @@ def ingresa_venta_renta():
                print('Ingresa un precio valido ')
            
         
-   precio_definitivo = ' Venta: ' + str(precio_venta) + '$' + ', Renta: ' + str(precio_renta) + '$'
-            
+       precio_definitivo = ' Venta: ' + str(precio_venta) + '$' + ', Renta: ' + str(precio_renta) + '$'
+          
    return precio_definitivo   
 
 

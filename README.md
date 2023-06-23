@@ -7,7 +7,6 @@
 [![Proyecto-Final-page-0001.jpg](https://i.postimg.cc/nzM7mM37/Proyecto-Final-page-0001.jpg)](https://postimg.cc/phbpbVbX)
 
 
-Se utiliza para mostrar en pantalla el catálogo de productos disponibles en una compañía de streaming. La función recorre la base de datos de productos y muestra información detallada sobre cada uno, como el tipo de producto (película, serie, documental, evento deportivo en vivo), título, características específicas y precio. Esto ayuda a los usuarios a tener una visión general de todos los productos disponibles y les permite tomar decisiones informadas sobre qué productos desean consumir.
 
 **Descripción del diagrama estructural y funcionamiento del programa:**
 

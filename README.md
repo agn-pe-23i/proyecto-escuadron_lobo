@@ -2,9 +2,9 @@
 
 **Proyecto**
  
-**Diagrama de estructura:**
+**Diagrama estructural:**
 
-![Screenshot_137](https://github.com/agn-pe-23i/proyecto-escuadron_lobo/assets/125081169/e81cec67-6e82-4165-928f-5d15ff5d5903)
+[Proyecto-Final.png](https://postimg.cc/dDWwGQHk)
 
 Descrpcion del diagrama estructural:
 El diagrama desarrollado permitió llevar a cabo la implementación en Python sin dificultades en cuanto a la estructura general del programa. El esquema del diagrama comienza con la función principal, encargada de iniciar el programa, seguida de una función central diseñada para controlar las opciones del menú. Además, cada función destinada a la manipulación del catálogo cuenta con funciones específicas correspondientes a su respectiva tarea.

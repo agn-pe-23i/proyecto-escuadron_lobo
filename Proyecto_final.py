@@ -15,7 +15,7 @@ Se tomaron en cuenta las siguientes necesidades para implementar al programa:
     Guardar catálogo.
     Salir del programa.
     
-Toda nuestro catálogo será manejada por un diccionario de diccionarios.
+Todo nuestro catálogo será manejada por un diccionario de diccionarios.
 Dicho catalogo será asignado a la variable base_de_Datos.
 """
 
@@ -27,9 +27,11 @@ Dicho catalogo será asignado a la variable base_de_Datos.
 
 import sys
 
-"""El módulo ingresar_datos_para_catalogo.py contiene funciones .
-   El módulo fue diseñado prioritariamente para el programa proyecto_Final.py."""
-
+"""Importamos el módulo ingresar_datos_multimedia.py 
+   Este módulo cuenta con funciones para agregar y validar 
+   elementos relacionados con archivos multimedia.
+   Considerando que en este problema trabajamos con películas y series y otros 
+   productos del tipo multimedia este módulo será de gran utilidad"""
 
 import ingresar_datos_multimedia
 
@@ -39,6 +41,10 @@ import ingresar_datos_multimedia
    
 import json
 
+"""Para el inicio de nuestro programa requerimos un diccionario de diccionarios en blanco.
+   En la variable base_de_Datos almacenaremos dicho diccionario de diciionarios ""en blanco"
+   (Sin ningun producto)."""
+   
 base_de_Datos = {"Peliculas": {}, "Series": {}, "Documentales": {}, "Evento_deportivo_en_vivo": {}}
 
     
@@ -46,19 +52,22 @@ def agrega_un_producto(base_de_Datos):
     
     """Esta función muestra al usuario un 'submenú' para ingresar un producto al catálogo.
        Dependerá de la necesidad del usuario el producto que deseé agregar.
-       Esta función utiliza como argumento la variable base_de_Datos
-       para ejecutar la opción número 5 del menú.
-       la Función retorna la variable Opcion_entrada"""
+       Esta función utiliza como argumento la variable base_de_Datos para almacenar en ella
+       los productos requeridos por el usuario. 
+       La Función retorna la variable Opcion_entrada"""
     
-    print("Menú agregar producto \n\n" 
+    print("Menú agregar producto: \n\n" 
           "1. Película \n" 
           "2. Series \n"
           "3. Documental \n"
           "4. Evento deportivo en vivo \n" 
           "5. Regresar \n")
 
-    # Utilizamos la función validar_numero_rango() del módulo Validar_datos
+    # Utilizamos una estructura de control while
     # para validar que la variable x esté dentro del rango asignado.
+    #  El ciclo se ejecuta mientras Validar sea igual a False, lo que significa 
+    # que se seguirá pidiendo al usuario que ingrese el número de su preferencia
+    # hasta que se cumpla la condición especificada.
     
     Validar = False
     while Validar == False:
@@ -70,10 +79,20 @@ def agrega_un_producto(base_de_Datos):
    
     x = int(x)
     
-    """Opcion_a_ingresar el nombre de la categoría del producto. 
-       Dichos nombres ya están definidos en la base de datos como claves.
-       Recordemos que la variable base_de_Datos es un diccionario de diccionarios.
-       Utilizaremos la variable Opcion_a_ingresar como clave para entrar al diccionario."""
+    """Deacuerdo a el número asignada a x, por medio de condicionales if 
+       se asignará que función realizar.
+       
+       Si x es igual a 1 se realiza la función ingresa_pelicula().
+         
+       Si x es igual a 2 se realiza la función ingresa_serie():
+  
+       Si x es igual a 3 se realiza la función ingresa_documental(): 
+  
+       Si x es igual a 4 se realiza la función ingresa_evento_dportivo():
+        
+       Si x es igual a 5 se  realiza la función menu():
+    
+       """
     
     # Por medio de condicionales if, elif y else asignamos a la variable.
     
@@ -91,40 +110,56 @@ def agrega_un_producto(base_de_Datos):
         
 def ingresa_pelicula(base_de_Datos):
     
+    """Esta función ingresa un producto tipo pelicula con sus caracteristicas 
+       correspondientes utilizando el modulo ingresar_datos_multimeedia.
+       Dichas caracteristicas se asigan a un diccionario cuya variable es y."""
+    
     titulo = input('Nombre de la pelicula: ')
     titulo = titulo.strip()
     año = ingresar_datos_multimedia.ingresa_año()
     director = ingresar_datos_multimedia.ingresa_nombre('Director@: ')
-    precio = ingresar_datos_multimedia.ingresa_precio()
+    precio = ingresar_datos_multimedia.ingresa_venta_renta()
     y = {'año':año, 'director':director, 'precio':precio}
     base_de_Datos['Peliculas'][titulo] = y
    
 def ingresa_serie(base_de_Datos):
     
+    """Esta función ingresa un producto tipo serie con sus caracteristicas 
+       correspondientes utilizando el modulo ingresar_datos_multimeedia.
+       Dichas caracteristicas se asigan a un diccionario cuya variable es y."""
+       
     titulo = input('Nombre de la serie: ')
     titulo = titulo.strip()
     base_de_Datos['Series'][titulo] = {}
     año = ingresar_datos_multimedia.ingresa_año()
     director = ingresar_datos_multimedia.ingresa_nombre('Director@: ')
-    temporadas = ingresar_datos_multimedia.ingresa_numero('Temporadas: ')
+    temporadas = ingresar_datos_multimedia.ingresar_numero('Temporadas: ')
     precio = ingresar_datos_multimedia.ingresa_venta_renta()
     y = {'año':año, 'director':director, 'temporadas':temporadas, 'precio':precio}
     base_de_Datos['Series'][titulo] = y
         
 def ingresa_documental(base_de_Datos):
     
-   titulo = input('Nombre del documental: ')
-   titulo = titulo.strip()
-   base_de_Datos['Documentales'][titulo] = {}
-   director = ingresar_datos_multimedia.ingresa_director()
-   tema = ingresar_datos_multimedia.ingresa_nombre('Tema: ')
-   año = ingresar_datos_multimedia.ingresa_año()
-   precio = ingresar_datos_multimedia.ingresa_venta_renta()
-   y = {'director':director, 'tema':tema, 'año':año, 'precio':precio}
-   base_de_Datos['Documentales'][titulo] = y
+    """Esta función ingresa un producto tipo documental con sus caracteristicas 
+       correspondientes utilizando el modulo ingresar_datos_multimeedia.
+       Dichas caracteristicas se asigan a un diccionario cuya variable es y."""
+       
+    titulo = input('Nombre del documental: ')
+    titulo = titulo.strip()
+    base_de_Datos['Documentales'][titulo] = {}
+    director = ingresar_datos_multimedia.ingresa_director()
+    tema = ingresar_datos_multimedia.ingresa_nombre('Tema: ')
+    año = ingresar_datos_multimedia.ingresa_año()
+    precio = ingresar_datos_multimedia.ingresa_venta_renta()
+    y = {'director':director, 'tema':tema, 'año':año, 'precio':precio}
+    base_de_Datos['Documentales'][titulo] = y
    
 def ingresa_evento_dportivo(base_de_Datos):
     
+    """Esta función ingresa un producto tipo evento deportivo con sus caracteristicas 
+       correspondientes utilizando el modulo ingresar_datos_multimeedia.
+       Dichas caracteristicas se asigan a un diccionario cuya variable es y."""
+       
     titulo = input('Nombre del evento en vivo: ')
     titulo = titulo.strip()
     base_de_Datos['Evento_deportivo_en_vivo'][titulo] = {}
@@ -213,10 +248,10 @@ def buscar_producto(base_de_Datos):
     else:
         print('\nProducto no encontrado.')
 
-def validar_s_n():
+def seguro_de_eliminacion():
  
     """ Esta función valida la opcion entre 'S' = Si, 'N' = No.
-    Esta especialmente diseñada para la eliminación de elementos dentro de un diccionario.
+    Esta desañado para validar la eliminación de un preducto dentro del catalogo.
     Retorna un valor booleano."""
     Validar = True 
     
@@ -305,7 +340,7 @@ def eliminar_un_producto(base_de_Datos):
                  
                 Producto_valido_para_eliminar = lista_de_productos_en_categoria[l]
                 print(lista_de_productos_en_categoria[l] + str(base_de_Datos[i][lista_de_productos_en_categoria[l]]))
-                if validar_s_n():
+                if seguro_de_eliminacion():
                    base_de_Datos[i].pop(Producto_valido_para_eliminar)
                    print('\nEl producto fue eliminado con exito.\n')
                 else: 
@@ -322,8 +357,10 @@ def mostrar_catalogo(base_de_Datos):
     
     """La función muestra al usuario la variedad de acciones que puede 
        realizar para mostrar el catálogo.
-       A cada acción le corresponde el nombre de la categoría o instrucción que desea.
-       Esta función retorna la opción para mostrar el catálogo."""
+       Despues asigna a la variale x el numero deacuerdo a la opcion seleccionada 
+       por el usuario.
+       Por ultimo, por meido de condicionales if se determina que función realizará 
+       el programa en relación con la variable x."""
     
     print('Menú mostrar catálogo \n'
           '1. Películas \n'
@@ -366,26 +403,48 @@ def mostrar_peliculas(base_de_Datos):
        
     # Para mostrar las peliculas.
     
-        lista_peliculas = list((base_de_Datos['Peliculas'].keys()))
-        for i in range(0, len(lista_peliculas)):
-            nombre_Pelicula = lista_peliculas[i]
-            año = str(base_de_Datos['Peliculas'][nombre_Pelicula]['año'])
-            director = str(base_de_Datos['Peliculas'][nombre_Pelicula]['director'])
-            precio = str(base_de_Datos['Peliculas'][nombre_Pelicula]['precio'])
-            print('\n' + nombre_Pelicula + '  Año: ' + año + ',   Director@: ' + director + ',   Precio: ' + precio + '\n')
+    """Esta función recorre dentro de la variable base_de_Datos
+       todas las  películas y, por medio de cada bucle de la estructura
+       de control while, almacena la información de cada película en la lista 
+       lista_peliculas.
+       En cada bucle almacea el nombre, año, director y precio, todo concatenado-"""
+    
+    lista_peliculas = list((base_de_Datos['Peliculas'].keys()))
+    for i in range(0, len(lista_peliculas)):
+        nombre_Pelicula = lista_peliculas[i]
+        año = str(base_de_Datos['Peliculas'][nombre_Pelicula]['año'])
+        director = str(base_de_Datos['Peliculas'][nombre_Pelicula]['director'])
+        precio = str(base_de_Datos['Peliculas'][nombre_Pelicula]['precio'])
+        print('\n' + nombre_Pelicula + '  Año: ' + año + ',   Director@: ' + director + ',   Precio: ' + precio + '\n')
     
 def mostrar_series(base_de_Datos):
     
-        lista_series = list((base_de_Datos['Series'].keys()))
-        for i in range(0, len(lista_series)):
-            nombre_serie = str(lista_series[i])
-            año = str(base_de_Datos['Series'][nombre_serie]['año'])
-            director = str(base_de_Datos['Series'][nombre_serie]['director'])
-            temporadas = str(base_de_Datos['Series'][nombre_serie]['temporadas'])
-            precio = str(base_de_Datos['Series'][nombre_serie]['precio'])
-            print('\n' + nombre_serie + '    Año: ' + año + '  Director: ' + director + '  Temporadas: ' + temporadas + ',   Precio: ' + precio + '\n')
+    # Para mostrar las series.
+    
+    """Esta función recorre dentro de la variable base_de_Datos
+       todas las  series y, por medio de cada bucle de la estructura
+       de control while, almacena la información de cada serie en la lista 
+       lista_series.
+       En cada bucle almacea el nombre, año, director, temporadas y precio, todo concatenado-"""
+    
+    lista_series = list((base_de_Datos['Series'].keys()))
+    for i in range(0, len(lista_series)):
+        nombre_serie = str(lista_series[i])
+        año = str(base_de_Datos['Series'][nombre_serie]['año'])
+        director = str(base_de_Datos['Series'][nombre_serie]['director'])
+        temporadas = str(base_de_Datos['Series'][nombre_serie]['temporadas'])
+        precio = str(base_de_Datos['Series'][nombre_serie]['precio'])
+        print('\n' + nombre_serie + '    Año: ' + año + '  Director: ' + director + '  Temporadas: ' + temporadas + ',   Precio: ' + precio + '\n')
           
 def mostrar_documentales(base_de_Datos):
+    
+    # Para mostrar los documentales.
+    
+    """Esta función recorre dentro de la variable base_de_Datos
+       todos los documentales y, por medio de cada bucle de la estructura
+       de control while, almacena la información de cada documental en la lista 
+       lista_documentales.
+       En cada bucle almacea el nombre, director, tema, año y precio, todo concatenado."""
         
     lista_documentales = list((base_de_Datos['Documentales'].keys()))
     for i in range(0, len(lista_documentales)):
@@ -398,6 +457,14 @@ def mostrar_documentales(base_de_Datos):
     
 def mostrar_eventos_deportivos(base_de_Datos):
     
+    """Esta función recorre dentro de la variable base_de_Datos
+       todas los eventos deportivos y, por medio de cada bucle de la estructura
+       de control while, almacena la información de cada evento deportivo en la lista 
+       lista_evento_deportivo.
+       En cada bucle almacea el nombre, deporte, fecha, hora, lugar y precio, todo concatenado."""
+    
+    # Para mostrar eventos deportivos.
+    
     lista_evento_deportivo = list((base_de_Datos['Evento_deportivo_en_vivo'].keys()))
     for i in range(0, len(lista_evento_deportivo)):
         nombre_evento_deportivo = lista_evento_deportivo[i]
@@ -409,6 +476,11 @@ def mostrar_eventos_deportivos(base_de_Datos):
         print('\n' + nombre_evento_deportivo + '   Deporte: ' + deporte + '   Fecha: ' + fecha + '   Hora: ' + hora + '   Lugar: ' + lugar + ',   Precio: ' + precio + '$\n')
     
 def mostrar_todo(base_de_Datos):
+    
+    """En esta función, se muestra todo el catalogo, utilizando las funciones anteriores 
+    funcionales para mostrar el catalogo deacuerdo a el tipo de producto."""
+    # Para mostrar todo.
+    
     mostrar_peliculas(base_de_Datos)
     mostrar_series(base_de_Datos)
     mostrar_documentales(base_de_Datos)
@@ -437,14 +509,14 @@ def guardar_catalogo(base_de_Datos):
     
 def main(base_de_Datos):
     
-    """Esta función realiza el funcionamiento de todo el programa a excepción de 
-       la variable base_de_Datos, pues esta será proporcionada por la función main().
-       Así logramos que la variable de datos no se 'reinicie' y el diccionario de diccionarios 
-       que está contenido en la variable base_de_Datos pueda posteriormente seguir siendo manipulada."""
-    
+    """Esta función realiza el funcionamiento de todo el programa."""
+       
     """A la variable Ejecutar se le asigna el valor de True y utilizando 
        la condicional while el programa se ejecutará indefinidamente hasta que 
        el usuario ingrese la opción numero 7 (Salir). """
+       
+    """Se muestra todas las opciones del menu. Deacuerdo con la opción seleccionada
+       Se ejecutará la funcion correspondiente a la opcion seleccionada"""
        
     Ejecutar = True
     
@@ -459,6 +531,13 @@ def main(base_de_Datos):
             "6. Guardar catálogo \n"
             "7. Salir")
         
+        
+        # Utilizamos una estructura de control while
+        # para validar que la variable x esté dentro del rango asignado.
+        #  El ciclo se ejecuta mientras Validar sea igual a False, lo que significa 
+        # que se seguirá pidiendo al usuario que ingrese el número de su preferencia
+        # hasta que se cumpla la condición especificada.
+        
         Validar = False
         while Validar == False:
             Opcion_Menu = input('Ingresa el número de tu preferencia: ')
@@ -466,8 +545,13 @@ def main(base_de_Datos):
                 Validar = True
             else:
                 print('Ingresa un número valido.')
-                
+          
+        
         Opcion_Menu = int(Opcion_Menu)
+        
+        """Si el valor de la variable Opcion_menu es igual a 1
+            Se realizará la función agregar_un_producto()"""
+        
         
         if Opcion_Menu == 1:
             agrega_un_producto(base_de_Datos)
@@ -486,8 +570,7 @@ def main(base_de_Datos):
              eliminar_un_producto(base_de_Datos)
              
              """Si el valor de la variable Opcion_menu es igual a 4 
-                se mostrará el catálogo utilizando las funciones Mostrar_catalogo
-                y Menu_mostrar_catalogo()."""
+                se mostrará el catálogo utilizando las funciones mostrar_catalogo"""
                 
         elif Opcion_Menu == 4:
              
@@ -495,7 +578,7 @@ def main(base_de_Datos):
              
              """Si el valor de la variable Opcion_menu es igual a 5
                 se cargará el  catálogo. utilizando la función cargar base de datos().
-                a la variable base_de_Datos se le asignara el valor de la función antes mencionada."""
+                a la variable base_de_Datos se le asignara el valor resultante de la función antes mencionada."""
          
         elif Opcion_Menu == 5:
              base_de_Datos = cargar_catalogo()
@@ -506,10 +589,8 @@ def main(base_de_Datos):
         elif Opcion_Menu == 6:
              guardar_catalogo(base_de_Datos)
              
-             """Si el valor de la variable Opcion_menu es igual a 7
-                a la variable Ejecutar se le asigna el valor False para así 
-                interrumpir la ejecución del programa.
-                Se muestra el mensaje 'Exit'."""
+             """Si el valor de la variable Opcion_menu es igual a 7 utilizamos la función .exit() del 
+                 modulo sys para cerrar el programa. Se muestra el mensaje 'Exit'"""
          
         elif Opcion_Menu == 7:
              print('\nExit')
@@ -520,4 +601,3 @@ def main(base_de_Datos):
              
     
 main(base_de_Datos)
-

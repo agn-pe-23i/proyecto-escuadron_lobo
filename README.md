@@ -8,7 +8,7 @@
 
 
 Descrpcion del diagrama estructural:
-El diagrama desarrollado permitió llevar a cabo la implementación en Python sin dificultades en cuanto a la estructura general del programa. El esquema del diagrama comienza con la función principal, encargada de iniciar el programa, seguida de una función central diseñada para controlar las opciones del menú. Además, cada función destinada a la manipulación del catálogo cuenta con funciones específicas correspondientes a su respectiva tarea.
+El diagrama desarrollado permitió llevar a cabo la implementación en Python sin dificultades en cuanto a la estructura general del programa. El esquema del diagrama comienza con la función principal, encargada de iniciar el programa. Además, cada función destinada a la manipulación del catálogo cuenta con funciones específicas correspondientes a su respectiva tarea.
 
 **Documentación del módulo Validar_datos.py** 
 

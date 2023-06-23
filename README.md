@@ -125,10 +125,13 @@ La función main() es responsable de controlar el flujo del programa y llamar a 
 
 **Comentarios respecto al diseño y a la implementación del proyecto:**
 
-Antes de empezar a programa, realizamos el esquema estructural utilizando el método top-down. Visualizamos la importancia de un módulo que ingresaría y validaría cualquier característica de cualquier tipo de producto multimedia (Para que así fuera de uso general).
+Antes de empezar a programa, realizamos el esquema estructural utilizando el método top-down. 
+Visualizamos la importancia de un módulo que ingresaría y validaría cualquier característica de cualquier tipo de producto multimedia (Para que así fuera de uso general).
+
 Estructuramos los módulos para satisfacer problemas pequeños que a su vez resolvieran el problema principal. 
 Definimos nuestra base de datos como un solo diccionario. Llegamos a la conclusión que podríamos aprovechar de mejor manera las características de los diccionarios dentro de Python. Podríamos así buscar, eliminar o agregar productos utilizando las claves de los diccionarios.
 Por conclusión nuestro diccionario era un diccionario de diccionarios.
 El diccionario vació arrancaría con el programa para un mejor funcionamiento de este.
+
 Teníamos juntas cada tres días para apoyarnos como equipo y así implementar de mejor manera las funciones repartidas por integrante.
 Con el diagrama bien estructurado, implementar las funciones resulto más sencillo. Lo último fue depurar los códigos hasta optimizar cada función y así obtener un programa que satisface el problema de manera clara y estructurada.

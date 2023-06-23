@@ -8,6 +8,29 @@
 
 
 Descrpcion del diagrama estructural:
+
+En el bloque main se seleccionará  que bloque del progama se ejecutará.
+El bloque main se ejecutará en bulce hasta que se seleccione el bloque de Salir.
+
+Para el bloque de Agregar_producto requieren de dos entradas:
+- La tipo Int que determina que función voy a tomar dentro del bloque Agregar_producto.
+- La tipo Str para agregar toda la información del producto
+Ese bloque tiene como salida el catalogo con el producto ya asignado al catalogo.
+
+El bloque Buscar_producto requieren como entrada una cadea tipo Str para buscar dentro del catalogo todos 
+los productos semejantes a la busqueda. Este bloque da como salida datos tipo Str con los productos semejantes a la busqueda.
+
+Para el bloque Mostrar_catalogo se requieren como entrada un dato tipo Int que determinará que funcion 
+se deberá realizar dentro del bloque Mostrar_catalogo. Este bloque da como salida el resultado de la funcion seleccionada mostrando  asi el catalogo o parte de el.
+
+Para el bloque Eliminar_un_producto se requiere como entrada una cadena tipo Str para identificar de manera unica el producto a eliminar. En caso de que dicha busqueda coincida con un porducto del catalogo, se hace uso de la función Seguro_eliminar para confirmar la eliminación del producto seleccionado.
+
+Para el bloque Cargar_catalogo se requiere una entrada tipo Str para indentficar el archivo a cargar.
+Este programa funciona con archivos terminación .json. Si no se encuentra el archivo de dicho nombre 
+o que dicho arvhivo no sea .json el programa tendrá un error. En completamente obligatorio utilizar archivos .json para este bloque. En caso de que dicho archivo si existe y sea tipo .json se asignara al catalogo toda la informacion contenda en dicho archivo.
+
+Para el bloque Guardar_catalogo se requiere una entrada tipo Str para nombrar el archivo a guardar.
+
 El diagrama desarrollado permitió llevar a cabo la implementación en Python sin dificultades en cuanto a la estructura general del programa. El esquema del diagrama comienza con la función principal, encargada de iniciar el programa. Además, cada función destinada a la manipulación del catálogo cuenta con funciones específicas correspondientes a su respectiva tarea. 
 
 **Documentación del módulo Validar_datos.py** 

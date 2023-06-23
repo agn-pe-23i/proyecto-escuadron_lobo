@@ -5,7 +5,7 @@
 
 ![Screenshot_137](https://github.com/agn-pe-23i/proyecto-escuadron_lobo/assets/125081169/e81cec67-6e82-4165-928f-5d15ff5d5903)
 
-**Documentación del módulo Validar_datos.py**
+**Documentación del módulo Validar_datos.py** 
 
 El módulo "Valdar_datos.py" proporciona una serie de funciones para validar diferentes tipos de datos. Se diseñó prioritariamente para el programa Proyecto_final.py.
 

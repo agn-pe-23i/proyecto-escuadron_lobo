@@ -459,9 +459,14 @@ def main(base_de_Datos):
             "6. Guardar catálogo \n"
             "7. Salir")
         
-        
-        
-        Opcion_Menu = input('Ingresa ')
+        Validar = False
+        while Validar == False:
+            Opcion_Menu = input('Ingresa el número de tu preferencia: ')
+            if Opcion_Menu.isdigit() and int(Opcion_Menu) > 0 and int(Opcion_Menu) < 8:
+                Validar = True
+            else:
+                print('Ingresa un número valido.')
+                
         Opcion_Menu = int(Opcion_Menu)
         
         if Opcion_Menu == 1:
@@ -515,3 +520,4 @@ def main(base_de_Datos):
              
     
 main(base_de_Datos)
+

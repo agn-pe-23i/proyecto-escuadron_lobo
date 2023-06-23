@@ -7,58 +7,57 @@
 [![Proyecto-Final-page-0001.jpg](https://i.postimg.cc/nzM7mM37/Proyecto-Final-page-0001.jpg)](https://postimg.cc/phbpbVbX)
 
 
-Descrpcion del diagrama estructural:
+Se utiliza para mostrar en pantalla el catálogo de productos disponibles en una compañía de streaming. La función recorre la base de datos de productos y muestra información detallada sobre cada uno, como el tipo de producto (película, serie, documental, evento deportivo en vivo), título, características específicas y precio. Esto ayuda a los usuarios a tener una visión general de todos los productos disponibles y les permite tomar decisiones informadas sobre qué productos desean consumir.
 
-En el bloque main se seleccionará  que bloque del progama se ejecutará.
-El bloque main se ejecutará en bulce hasta que se seleccione el bloque de Salir.
+**Descripción del diagrama estructural y funcionamiento del programa:**
+
+En el bloque main se seleccionará que bloque del programa se ejecutará.
+El bloque main se ejecutará en bucle hasta que se seleccione el bloque de Salir.
 
 Para el bloque de Agregar_producto requieren de dos entradas:
-- La tipo Int que determina que función voy a tomar dentro del bloque Agregar_producto.
-- La tipo Str para agregar toda la información del producto
-Ese bloque tiene como salida el catalogo con el producto ya asignado al catalogo.
+- El tipo Int que determina que función voy a tomar dentro del bloque Agregar_producto.
+- El tipo Str para agregar toda la información del producto.
+Ese bloque tiene como salida el catálogo con el producto ya asignado al catálogo.
 
-El bloque Buscar_producto requieren como entrada una cadea tipo Str para buscar dentro del catalogo todos 
-los productos semejantes a la busqueda. Este bloque da como salida datos tipo Str con los productos semejantes a la busqueda.
+El bloque Buscar_producto requieren como entrada una cadena tipo Str para buscar dentro del catálogo todos.
+los productos semejantes a la búsqueda. Este bloque da como salida datos tipo Str con los productos semejantes a la búsqueda.
 
-Para el bloque Mostrar_catalogo se requieren como entrada un dato tipo Int que determinará que funcion 
-se deberá realizar dentro del bloque Mostrar_catalogo. Este bloque da como salida el resultado de la funcion seleccionada mostrando  asi el catalogo o parte de el.
+Para el bloque Mostrar_catalogo se requieren como entrada un dato tipo Int que determinará que función 
+se deberá realizar dentro del bloque Mostrar_catalogo. Este bloque da como salida el resultado de la función seleccionada mostrando  así el catálogo o parte de él.
 
-Para el bloque Eliminar_un_producto se requiere como entrada una cadena tipo Str para identificar de manera unica el producto a eliminar. En caso de que dicha busqueda coincida con un porducto del catalogo, se hace uso de la función Seguro_eliminar para confirmar la eliminación del producto seleccionado.
+Para el bloque Eliminar_un_producto se requiere como entrada una cadena tipo Str para identificar de manera única el producto a eliminar. En caso de que dicha búsqueda coincida con un producto del catálogo, se hace uso de la función Seguro_eliminar para confirmar la eliminación del producto seleccionado.
 
-Para el bloque Cargar_catalogo se requiere una entrada tipo Str para indentficar el archivo a cargar.
+Para el bloque Cargar_catalogo se requiere una entrada tipo Str para identificar el archivo a cargar.
 Este programa funciona con archivos terminación .json. Si no se encuentra el archivo de dicho nombre 
-o que dicho arvhivo no sea .json el programa tendrá un error. En completamente obligatorio utilizar archivos .json para este bloque. En caso de que dicho archivo si existe y sea tipo .json se asignara al catalogo toda la informacion contenda en dicho archivo.
+o que dicho archivo no sea .json el programa tendrá un error. En completamente obligatorio utilizar archivos .json para este bloque. En caso de que dicho archivo si existe y sea tipo .json se asignara al catálogo toda la información contenida en dicho archivo.
 
 Para el bloque Guardar_catalogo se requiere una entrada tipo Str para nombrar el archivo a guardar.
 
-El diagrama desarrollado permitió llevar a cabo la implementación en Python sin dificultades en cuanto a la estructura general del programa. El esquema del diagrama comienza con la función principal, encargada de iniciar el programa. Además, cada función destinada a la manipulación del catálogo cuenta con funciones específicas correspondientes a su respectiva tarea. 
+El bloque Salir ejecuta el fin del programa y del ciclo while del bloque main. Da como salida el fin del programa.
 
-**Documentación del módulo Validar_datos.py** 
+El diagrama desarrollado permitió llevar a cabo la implementación en Python sin dificultades en cuanto a la estructura general del programa.
 
-El módulo "Valdar_datos.py" proporciona una serie de funciones para validar diferentes tipos de datos. Se diseñó prioritariamente para el programa Proyecto_final.py.
+**Documentación del módulo ingresar_datos_multimedia.py** 
 
-Documentación de uso de cada función del módulo Validar_datos.py:
+Este módulo contiene funciones que son útiles para ingresar y validar datos descriptivos de productos multimedia en diferentes contextos, como servicios de streaming, bibliotecas de canciones, audiolibros u otras colecciones multimedia.
 
-Función validar_numero_rango(a, b):
-Esta función valida un número ingresado por el usuario dentro de un rango especificado. Toma dos argumentos: a y b, que representan el número mínimo + 1 y el número máximo - 1 que el usuario puede introducir para que éste sea válido. La función solicita al usuario un número válido hasta que se cumpla la condición establecida. Retorna el número validado ingresado por el usuario.
+A continuacion se muestra la documentación de cada función:
 
-Función validar_numero():
-Esta función valida que la entrada del usuario sea un número entero. Utiliza una condicional while para solicitar al usuario un número válido hasta que se cumpla la condición establecida. Retorna el número validado ingresado por el usuario.
+Función ingresar_numero(tipo)
+Esta función permite ingresar y validar un número mediante la interacción con el usuario. Recibe como parámetro tipo, que indica el tipo de dato descriptivo que se va a ingresar y validar. La función solicita al usuario que ingrese un número válido, y continúa solicitándolo hasta que se cumpla la condición. Luego, retorna el número validado.
 
-Función validar_año():
-Esta función valida que la entrada del usuario sea un año de 4 dígitos. Utiliza una condicional while para solicitar al usuario un número de 4 dígitos válido hasta que se cumpla la condición establecida. Retorna el año validado ingresado por el usuario.
+Función ingresa_año()
+Esta función valida y retorna un año ingresado por el usuario. Solicita al usuario que ingrese un número de 4 dígitos que represente un año válido. Continúa solicitando la entrada hasta que se cumplan las condiciones establecidas. Finalmente, convierte la entrada en un entero y lo retorna como el año validado.
 
-Función validar_precio():
-Esta función valida que la entrada del usuario sea un precio válido. Utiliza una condicional while para solicitar al usuario un precio válido hasta que se cumpla la condición establecida. Retorna el precio validado ingresado por el usuario.
+Función ingresa_precio()
+Esta función valida y retorna un precio ingresado por el usuario. Solicita al usuario que ingrese un número que represente un precio válido. Continúa solicitando la entrada hasta que se ingrese un número válido. Finalmente, retorna el precio validado.
 
-Función validar_venta_renta():
-Esta función valida y asigna el valor del precio según la opción elegida por el usuario (venta, renta o ambos). Muestra un menú al usuario para que elija una opción y luego utiliza otras funciones de validación para obtener los precios correspondientes. Retorna el precio validado según la opción elegida por el usuario.
+Función ingresa_venta_renta()
+Esta función asigna y valida el precio de un producto según la preferencia del usuario entre venta, renta o ambas opciones. Muestra un menú con las opciones disponibles y solicita al usuario que ingrese un número correspondiente a su preferencia. Valida la entrada y, dependiendo de la opción elegida, solicita y valida el precio de venta, el precio de renta o ambos precios. Finalmente, retorna una cadena que representa el precio validado, incluyendo la información de venta y/o renta según corresponda.
 
-Función validar_s_n():
-Esta función valida la opción ingresada por el usuario entre 'S' (sí) y 'N' (no). Utiliza una condicional while para solicitar al usuario una opción válida hasta que se cumpla la condición establecida. Retorna un valor booleano True si se elige 'S' (sí) o False si se elige 'N' (no).
+Función ingresa_nombre(tipo)
+Esta función permite ingresar y validar un nombre mediante la interacción con el usuario. Recibe como parámetro tipo, que indica el tipo de producto multimedia que se va a nombrar. La función solicita al usuario que ingrese un nombre válido, que consiste en una cadena de caracteres que no contenga números. Continúa solicitando la entrada hasta que se ingrese un nombre válido, y luego lo retorna.
 
-Función validar_director():
-Esta función valida que la información ingresada por el usuario para el nombre del director sea una cadena de letras. Utiliza una condicional while para solicitar al usuario un nombre válido hasta que se cumpla la condición establecida. Retorna el nombre del director validado ingresado por el usuario.
 
 **Documentación del programa Proyecto_final.py:**
 
@@ -70,29 +69,27 @@ Dichos módulos son:
 - json: Se utiliza el módulo json para leer y escribir archivos del tipo '.json'.
 Con este tipo de archivo guardaremos y cargaremos los catálogos. Los archivos .json se caracterizan para almacenar diccionarios dentro de Python.
 
-- Validar_Datos: Se utiliza el módulo Validar_datos.py para validar múltiples tipos de datos.
-El módulo fue diseñado prioritariamente para el programa proyecto_Final.py. 
+- ingresar_datos_multimedia: Contiene funciones que  son útiles para ingresar y validar datos descriptivos de productos multimedia en diferentes contextos, como servicios de streaming, bibliotecas de canciones, audiolibros u otras colecciones multimedia.
 
 Documentación de uso de cada función del programa Proyecto_final.py:
 
-Función seleccion_menu():
-Esta función muestra al usuario un menú con varias opciones y solicita al usuario que seleccione una opción.
-Utiliza la función validar_numero_rango() del módulo Validar_datos para validar la entrada del usuario y asegurarse de que la opción seleccionada esté dentro del rango válido.
-Retorna la opción seleccionada del menú.
+Función agrega_un_producto(base_de_Datos):
+Sirve para agregar un producto al catálogo. Esta función muestra un submenú al usuario donde puede seleccionar el tipo de producto que desea agregar (pelicula, serie, documental o evento deportivo en vivo). Luego, redirige al usuario a la función correspondiente para ingresar los datos específicos del producto seleccionado.
 
-Función tipo_de_producto_a_ingresar(base_de_Datos):
-Esta función muestra al usuario un submenú para seleccionar el tipo de producto que desea agregar al catálogo.
-Utiliza la función validar_numero_rango() del módulo Validar_datos para validar la entrada del usuario y asegurarse de que la opción seleccionada esté dentro del rango válido.
-Asigna a la variable Opcion_a_ingresar el nombre de la categoría del producto seleccionado.
-Si el usuario selecciona la opción "Regresar", se llama a la función ejecucion_programa(base_de_Datos) para volver al menú principal.
-Retorna la opción seleccionada.
+Función ingresa_pelicula(base_de_Datos): 
+Sirve para ingresar los datos de una película. Esta función solicita al usuario que ingrese el título, el director, el año de lanzamiento y precio. 
+Luego, utiliza estos datos para crear un nuevo diccionario que representa la película y lo agrega a la base de datos existente.
 
-Función ingresa_datos(Opcion_a_ingresar, base_de_Datos):
-Esta función recibe la opción seleccionada y el catálogo de productos como argumentos.
-Dependiendo de la opción seleccionada, solicita al usuario los datos necesarios para agregar un producto al catálogo.
-Utiliza las funciones del módulo Validar_datos para validar los datos ingresados por el usuario.
-Crea un diccionario con los datos del producto y lo agrega al catálogo bajo la categoría correspondiente.
-Retorna el catálogo actualizado.
+Función ingresa_seriea(base_de_Datos): 
+Sirve para ingresar los datos de una serie. Esta función solicita al usuario que ingrese el título, el director, el año de lanzamiento y precio. 
+Luego, utiliza estos datos para crear un nuevo diccionario que representa la serie y la agrega a la base de datos existente.
+
+
+Función ingresa_documental(base_de_Datos): 
+Sirve para ingresar los datos de un documental. Esta función solicita al usuario que ingrese el título, el director, el tema, el año de lanzamiento, y precio. Luego, utiliza estos datos para crear un nuevo diccionario que representa el documental y lo agrega a la base de datos existente
+
+Función Función ingresa_evento_deportivo(base_de_Datos): 
+Sirve para ingresar los datos de un evento deportivo. Esta función solicita al usuario que ingrese el título, deporte, fecha, hora y lugar.. Luego, utiliza estos datos para crear un nuevo diccionario que representa el evento deportivo y lo agrega a la base de datos existente.
 
 Función buscar_producto(base_de_Datos):
 Esta función recibe el catálogo de productos como argumento.
@@ -106,13 +103,9 @@ Solicita al usuario el nombre exacto del producto que desea eliminar.
 Busca el producto en todas las categorías del catálogo y lo elimina si se encuentra.
 Si el producto no se encuentra, muestra un mensaje indicando que el producto no fue encontrado.
 
-Función Menu_mostrar_catalogo():
-Muestra un submenú dentro del programa que muestra las opciones disponibles para mostrar el catálogo. A cada acción le corresponde el nombre de la categoría o instrucción que desea. Dicha correspondencia se asigna por medio de condicionales if, elif y else. Esta función retorna la opción para mostrar el catálogo
+Función mostrar_catalogo(base_de_Datos):
+Se utiliza para mostrar en pantalla el catálogo de productos disponibles en una compañía de streaming. La función recorre la base de datos de productos y muestra información detallada sobre cada uno, como el tipo de producto (película, serie, documental, evento deportivo en vivo), título, características específicas y precio. Esto ayuda a los usuarios a tener una visión general de todos los productos disponibles y les permite tomar decisiones informadas sobre qué productos desean consumir.
 
-Función Mostrar_catalogo(base_de_Datos, opcion_mostrar_catalogo):
-Esta función utiliza el catálogo (base_de_Datos) y la opción seleccionada (opcion_mostrar_catalogo) como argumentos. Según la opción seleccionada en la función Menu_mostrar_catalogo(), se realiza la acción correspondiente para mostrar el catálogo.
-Cada tipo de producto cuenta con elementos característicos del propio. 
-De acuerdo con la opción requerida por el usuario, por medio de citar las claves de dichas características se muestra al usuario la concatenación del nombre del producto con todas las características de dicho producto. 
 
 Función cargar_catalogo():
 Esta función carga un catálogo guardado en un archivo del tipo JSON. 
@@ -125,23 +118,17 @@ En caso de mo existir el archivo, creará uno nuevo donde guardará la informaci
 Función ejecucion_programa(base_de_Datos):
 Esta función ejecuta en bucle todo el funcionamiento del programa, se implementó de esta manera, para no perder los datos de la variable base_de_Datos entre cada opción.
 
-Función main():
-Esta función inicia nuestro programa con una base de datos sin productos. Esta base de datos la guarda en la variable base_de_Datos para ser utilizada por la funcion ejecucion_programa(base_de_Datos) y dicha infomación ser modificada por el funcionamiento de la función ejecucion_programa(base_de_Datos).
+Función main(base_de_Datos):
+Es la función principal de un programa que maneja un catálogo de productos. Recibe como argumento base_de_Datos, que es un diccionario de diccionarios que representa el catálogo.
+
+La función main() es responsable de controlar el flujo del programa y llamar a otras funciones según las necesidades del usuario. En este caso, el programa ofrece varias opciones para manipular el catálogo, como agregar un producto, buscar un producto, eliminar un producto, mostrar el catálogo, cargar el catálogo desde un archivo y guardar el catálogo en un archivo.
 
 **Comentarios respecto al diseño y a la implementación del proyecto:**
 
-Antes de empezar a programa, realizamos el esquema estructural utilizando el método top-down. Visualizamos la importancia de un módulo el cual validara la información ingresada por el usuario. Dicho modulo seria utilizando por la función que ingresara datos los datos.
-
+Antes de empezar a programa, realizamos el esquema estructural utilizando el método top-down. Visualizamos la importancia de un módulo que ingresaría y validaría cualquier característica de cualquier tipo de producto multimedia (Para que así fuera de uso general).
 Estructuramos los módulos para satisfacer problemas pequeños que a su vez resolvieran el problema principal. 
-
-Decidimos que también usaríamos el módulo para validar datos al momento de validar las opciones entre el menú y los sub-menú.
-
-Tuvimos un error al momento de implementar el esquema estructural el cual fue en no pensar en un módulo que mantuviera en bucle todo el programa. Lo que causaba dicho erro era que el programa se "cerraba" antes de tiempo. Dicho error ya está corregido el esquema estructural mostrado en este archivo.
-
 Definimos nuestra base de datos como un solo diccionario. Llegamos a la conclusión que podríamos aprovechar de mejor manera las características de los diccionarios dentro de Python. Podríamos así buscar, eliminar o agregar productos utilizando las claves de los diccionarios.
 Por conclusión nuestro diccionario era un diccionario de diccionarios.
 El diccionario vació arrancaría con el programa para un mejor funcionamiento de este.
-
 Teníamos juntas cada tres días para apoyarnos como equipo y así implementar de mejor manera las funciones repartidas por integrante.
-
 Con el diagrama bien estructurado, implementar las funciones resulto más sencillo. Lo último fue depurar los códigos hasta optimizar cada función y así obtener un programa que satisface el problema de manera clara y estructurada.

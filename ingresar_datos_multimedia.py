@@ -5,8 +5,10 @@ Módulo: ingresar_datos_multimedia.py
 Este módulo incluye funciones para ingresar y validar datos descriptivos de 
 productos multimedia.
 Estas funciones se pueden utilizar para ingresar y validar de manera más sencilla 
-características de productos para algún servicio de streaming 
-por ejemplo Netflix, HBO Max, Blim, etc.
+características de productos para algún servicio de streaming por ejemplo Netflix, HBO Max, Blim, etc.
+También para organizar una biblioteca de canciones, una biblioteca de audiolibros o 
+cualquier tipo de colección de tipo multimedia.
+.
 '''
 
 
@@ -145,4 +147,4 @@ def ingresa_nombre(tipo):
         else:
             print('Ingresa un nombre válido: ')
     
-    return nombre
+    return nombre 
